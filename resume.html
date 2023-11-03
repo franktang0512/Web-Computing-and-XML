@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+.icon-bar {
+  width: 100%;
+  background-color: #555;
+  overflow: hidden;
+  max-height: 500px;
+  transition: max-height 0.2s ease-out;
+  display: flex;
+}
+
+.icon-bar a {
+  flex: 1;
+  text-align: center;
+  padding: 12px 0;
+  display: block;
+  color: white;
+  font-size: 24px;
+  text-decoration: none;
+}
+
+.icon-bar a:hover {
+  background-color: #000;
+}
+
+.active {
+  background-color: #04AA6D;
+}
+
+.menu-toggle {
+  display: none;
+  width: 100%;
+  text-align: center;
+  background-color: #555;
+  color: white;
+  padding: 12px 0;
+  font-size: 24px;
+}
+
+.menu-toggle:hover {
+  background-color: #000;
+}
+
+@media screen and (max-width: 600px) {
+  .icon-bar {
+    max-height: 0;
+    overflow: hidden;
+    flex-direction: column;
+  }
+
+  .icon-bar.show {
+    max-height: 500px; /* Adjust as needed */
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  .icon-bar a {
+    width: 100%;
+  }
+}
+@media screen and (min-width: 601px) {
+  .menu-toggle {
+    display: none;
+  }
+
+  .icon-bar {
+    max-height: none;
+  }
+}
+</style>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  var path = window.location.pathname;
+  var page = path.split("/").pop();
+
+  var menuItems = document.getElementById('myLinks').getElementsByTagName('a');
+
+  for (var i = 0; i < menuItems.length; i++) {
+    if (menuItems[i].getAttribute('href') === page) {
+      menuItems[i].classList.add('active');
+    }
+  }
+
+  var menuToggle = document.querySelector('.menu-toggle');
+  var iconBar = document.querySelector('.icon-bar');
+
+  menuToggle.addEventListener('click', function() {
+    if (iconBar.classList.contains('show')) {
+      iconBar.classList.remove('show');
+    } else {
+      iconBar.classList.add('show');
+    }
+  });
+
+  menuItems.forEach(function(item) {
+    item.addEventListener('click', function() {
+      if (iconBar.classList.contains('show')) {
+        iconBar.classList.remove('show');
+      }
+    });
+  });
+});
+</script>
+</head>
+<body>
+
+<div class="icon-bar" id="myLinks">
+  <a href="index.html">首頁</a> 
+  <a href="svg_canvas.html">SVG/CANVAS</a> 
+  <a href="resume.html">Resume</a> 
+  <a href="videos.html">影片作品</a>
+</div>
+
+<a href="#" class="menu-toggle">Menu <i class="fa fa-bars"></i></a>
+
+</body>
+</html>
