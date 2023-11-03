@@ -78,6 +78,21 @@ body {
     max-height: none;
   }
 }
+table {
+    width: 100%;
+    max-width: 600px;
+    margin: 20px auto;
+    border-collapse: collapse;
+  }
+  
+  table, th, td {
+    border: 1px solid black;
+  }
+  
+  th, td {
+    padding: 10px;
+    text-align: left;
+  }
 </style>
 <script>
 document.addEventListener('DOMContentLoaded', function() {
@@ -124,5 +139,46 @@ document.addEventListener('DOMContentLoaded', function() {
 
 <a href="#" class="menu-toggle">Menu <i class="fa fa-bars"></i></a>
 
+
+<table style="width:100%; max-width: 600px; margin: 20px auto;" border="1">
+    <tr>
+      <th>欄位名稱</th>
+      <th></th>
+    </tr>
+    <tr>
+      <td>姓名:</td>
+      <td>唐中凡</td>
+    </tr>
+    <tr>
+      <td>出生日期:</td>
+      <td>1995/12/05</td>
+    </tr>
+    <tr>
+      <td>地址:</td>
+      <td>台北市文山區汀洲路台灣師範大學應用科學大樓資工系</td>
+    </tr>
+    <tr>
+      <td>電話:</td>
+      <td>0912345678</td>
+    </tr>
+    <tr>
+      <td>電子郵件:</td>
+      <td>frankcsie@ntnu.edu.tw</td>
+    </tr>
+    <tr>
+      <td>教育背景:</td>
+      <td>學士:國立中正大學 資訊管理系<br>碩士:國立臺灣師範大學 資訊工程所</td>
+    </tr>
+    <tr>
+      <td>工作經驗:</td>
+      <td>台灣暹勁 電控工程師 <br> 華電聯網 資安工程師</td>
+    </tr>
+    <tr>
+      <td>技能:</td>
+      <td>XML、HTML、CSS、C、C++、JAVA、C#、PHP、Node.js、SQL</td>
+    </tr>
+    
+    
+  </table>
 </body>
 </html>
